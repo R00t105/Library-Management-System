@@ -2,7 +2,6 @@ package restapiprojects.librarymanagementsystem.Service;
 
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import restapiprojects.librarymanagementsystem.DTO.BorrowRecordDto;
 import restapiprojects.librarymanagementsystem.Exception.BookNotFoundException;
@@ -26,8 +25,6 @@ public class BorrowRecordServiceImpl implements BorrowRecordService {
     private final MemberRepository memberRepository;
     private final BookRepository bookRepository;
     private final BorrowRecordMapper borrowRecordMapper;
-    
-
 
     @Override
     public List<BorrowRecordDto> getAllBorrowRecords() {
@@ -91,4 +88,5 @@ public class BorrowRecordServiceImpl implements BorrowRecordService {
     public List<BorrowRecordDto> findOverdueRecords() {
         return borrowRecordRepository.findOverdueRecords().stream().map(borrowRecordMapper::toDto).toList();
     }
+
 }

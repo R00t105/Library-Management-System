@@ -1,6 +1,7 @@
 package restapiprojects.librarymanagementsystem.Controller;
 
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,13 +12,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/books")
+@RequiredArgsConstructor
 public class BookController {
 
     private final BookService bookService;
-
-    public BookController(BookService bookService) {
-        this.bookService = bookService;
-    }
 
     @GetMapping
     public ResponseEntity<List<BookDto>> getAllBooks() {
@@ -61,4 +59,5 @@ public class BookController {
     public ResponseEntity<List<BookDto>> getByTitleInclude(@RequestParam String keyword) {
         return ResponseEntity.ok(bookService.searchByTitleIgnoreCase(keyword));
     }
+
 }

@@ -1,22 +1,20 @@
 package restapiprojects.librarymanagementsystem.Controller;
 
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import restapiprojects.librarymanagementsystem.DTO.AuthorDto;
 import restapiprojects.librarymanagementsystem.Service.AuthorService;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/authors")
+@RequiredArgsConstructor
 public class AuthorController {
 
     private final AuthorService authorService;
-
-    public AuthorController(AuthorService authorService) {
-        this.authorService = authorService;
-    }
 
     @GetMapping
     public ResponseEntity<List<AuthorDto>> getAllAuthors() {

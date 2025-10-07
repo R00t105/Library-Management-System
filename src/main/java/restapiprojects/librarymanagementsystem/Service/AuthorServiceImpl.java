@@ -7,7 +7,6 @@ import restapiprojects.librarymanagementsystem.Exception.AuthorNotFoundException
 import restapiprojects.librarymanagementsystem.Mapper.AuthorMapper;
 import restapiprojects.librarymanagementsystem.Model.Author;
 import restapiprojects.librarymanagementsystem.Repository.AuthorRepository;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -63,4 +62,5 @@ public class AuthorServiceImpl implements AuthorService{
     public List<AuthorDto> findByNationality(String nationality) {
         return authorRepository.findByNationality(nationality).stream().map(authorMapper::toDto).toList();
     }
+
 }

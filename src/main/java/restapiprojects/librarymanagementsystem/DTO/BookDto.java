@@ -19,5 +19,4 @@ public class BookDto {
 
     private String authorName;
 
-
 }

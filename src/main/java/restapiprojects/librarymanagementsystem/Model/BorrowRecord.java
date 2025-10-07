@@ -30,9 +30,6 @@ public class BorrowRecord {
     @Builder.Default
     private boolean isReturned = false;
 
-
-
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "book_id")
     private Book book;
@@ -41,13 +38,11 @@ public class BorrowRecord {
     @JoinColumn(name = "member_id")
     private Member member;
 
-
     @PrePersist
     public void setReturnDateAutomatically() {
         if (borrowDate != null && returnDate == null) {
             this.returnDate = borrowDate.plusDays(14);
         }
     }
-
 
 }

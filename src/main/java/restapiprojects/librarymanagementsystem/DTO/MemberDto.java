@@ -22,5 +22,4 @@ public class MemberDto {
     @NotBlank(message = "THIS FIELD IS REQUIRED")
     private String phone;
 
-
 }

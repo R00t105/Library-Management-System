@@ -2,7 +2,6 @@ package restapiprojects.librarymanagementsystem.Service;
 
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import restapiprojects.librarymanagementsystem.DTO.MemberDto;
 import restapiprojects.librarymanagementsystem.Exception.DuplicateMemberInfoException;
@@ -19,8 +18,6 @@ public class MemberServiceImpl implements MemberService {
 
     private final MemberRepository memberRepository;
     private final MemberMapper memberMapper;
-
-
 
     @Override
     public List<MemberDto> getAllMembers() {
@@ -82,4 +79,5 @@ public class MemberServiceImpl implements MemberService {
     public boolean existsByPhone(String phone) {
         return memberRepository.existsByPhone(phone);
     }
+
 }

@@ -11,13 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/borrow-records")
+@RequiredArgsConstructor
 public class BorrowRecordController {
 
     private final BorrowRecordService borrowRecordService;
-
-    public BorrowRecordController(BorrowRecordService borrowRecordService) {
-        this.borrowRecordService = borrowRecordService;
-    }
 
     @GetMapping
     public ResponseEntity<List<BorrowRecordDto>> getAllBorrowRecords() {
@@ -64,4 +61,5 @@ public class BorrowRecordController {
     public ResponseEntity<List<BorrowRecordDto>> getOverdueRecords() {
         return ResponseEntity.ok(borrowRecordService.findOverdueRecords());
     }
+
 }

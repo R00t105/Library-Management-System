@@ -2,7 +2,6 @@ package restapiprojects.librarymanagementsystem.Model;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +30,5 @@ public class Author {
     @Builder.Default
     @OneToMany(mappedBy = "author", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     private List<Book> books = new ArrayList<>();
-
 
 }

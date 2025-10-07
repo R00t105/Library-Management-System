@@ -2,10 +2,8 @@ package restapiprojects.librarymanagementsystem.Service;
 
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import restapiprojects.librarymanagementsystem.DTO.BookDto;
-import restapiprojects.librarymanagementsystem.Exception.AuthorNotFoundException;
 import restapiprojects.librarymanagementsystem.Exception.BookNotFoundException;
 import restapiprojects.librarymanagementsystem.Mapper.BookMapper;
 import restapiprojects.librarymanagementsystem.Model.Author;
@@ -22,19 +20,6 @@ public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
     private final AuthorRepository authorRepository;
     private final BookMapper bookMapper;
-
-
-//    private BookDto bookMapper.toDto(Book book) {
-//        return new BookDto(book.getTitle(), book.getAuthor().getId(), book.getAuthor().getName());
-//    }
-//
-//    private Book bookMapper.toEntity(BookDto bookDto) {
-//        Author author = authorRepository.getReferenceById(bookDto.getAuthorId());
-//        Book book = new Book();
-//        book.setTitle(bookDto.getTitle());
-//        book.setAuthor(author);
-//        return book;
-//    }
 
     @Override
     public List<BookDto> getAllBooks() {
@@ -88,4 +73,5 @@ public class BookServiceImpl implements BookService {
     public List<BookDto> searchByTitleIgnoreCase(String keyword) {
         return bookRepository.findByTitleContainingIgnoreCase(keyword).stream().map(bookMapper::toDto).toList();
     }
+
 }

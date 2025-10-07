@@ -13,7 +13,6 @@ public interface BorrowRecordMapper {
     @Mapping(target = "memberName", source = "borrowRecord.member.name")
     BorrowRecordDto toDto(BorrowRecord borrowRecord);
 
-
     @Mapping(target = "book.id", source = "borrowRecordDto.bookId")
     @Mapping(target = "member.id", source = "borrowRecordDto.memberId")
     BorrowRecord toEntity(BorrowRecordDto borrowRecordDto);

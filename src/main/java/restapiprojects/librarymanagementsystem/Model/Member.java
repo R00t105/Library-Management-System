@@ -21,8 +21,6 @@ public class Member {
     private String email;
     private String phone;
 
-
-
     @OneToMany(mappedBy = "member", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @Builder.Default
     private List<BorrowRecord> borrowRecords = new ArrayList<>();
