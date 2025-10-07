@@ -1,0 +1,6 @@
+Library Management System – Spring Boot REST API
+Developed a robust Library Management System using Spring Boot, Spring Data JPA, and MySQL, enabling efficient management of books, members, and borrow records. Implemented automatic return date calculation, borrow/return tracking, and JSON-based API responses. Applied One-to-Many entity relationships, Lombok for reducing boilerplate code, and AuditingEntityListener for automatic timestamps. Designed RESTful endpoints to support CRUD operations with accurate data validation and state management.
+
+
+Library Management System – Spring Boot REST API
+Developed a full-featured library management REST API with Spring Boot and Spring Data JPA, supporting book & member management, borrow/return tracking with automatic return dates, and efficient JSON responses. Applied entity relationships, auditing for timestamps, and clean code practices, delivering a scalable and maintainable solution.
