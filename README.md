@@ -9,6 +9,8 @@ A Spring Boot REST API application to manage books, members, and borrowing recor
 - Record **Borrowing** and **Returning** of books
 - Automatically calculate **return dates** based on borrow date
 - Track **returned books** and overdue books
+- Authentication & Authoraization
+- Add Users with Encrypt Password
 - JSON input/output support
 - Date formatting for readability (`dd-MM-yyyy`)
 
@@ -17,6 +19,7 @@ A Spring Boot REST API application to manage books, members, and borrowing recor
 - Java 17
 - Spring Boot 3
 - Spring Data JPA
+- Spring Security
 - Hibernate
 - MySQL
 - Lombok
